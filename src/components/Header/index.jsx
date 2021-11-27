@@ -1,7 +1,7 @@
 import { AppBar, Box, Toolbar, Typography, IconButton } from "@material-ui/core"
 import { ShoppingCart } from "@material-ui/icons";
 import * as React from "react";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { StyledBadge } from "./style";
 import "./style.css";
 import { activeFromCart } from "../../store/modules/ShowCart/actions";
