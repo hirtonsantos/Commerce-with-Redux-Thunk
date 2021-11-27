@@ -1,0 +1,10 @@
+.MuiBox-root.MuiBox-root-2 {
+    width: 100vw;
+    background-color: aliceblue;
+    height: 64px;
+    margin-bottom: 25px;
+}
+
+.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters {
+    justify-content: space-around;
+}
