@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "../../store/modules/Cart/actions";
+import Button from "../Button";
+import { Container } from "./style";
 
 const Cart = ({ product }) => {
   const { name, price, id, image} = product;
@@ -7,14 +9,14 @@ const Cart = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <Container>
       <img src={image} alt={name} />
-      <h4>{name}</h4>
-      <h3>{price}</h3>
-      <button onClick={() => dispatch(removeFromCart(id))}>
+      <h2>{name}</h2>
+      <span>{price}</span>
+      <Button onClick={() => dispatch(removeFromCart(id))}>
         Remover do carrinho
-      </button>
-    </div>
+      </Button>
+    </Container>
   );
 };
 

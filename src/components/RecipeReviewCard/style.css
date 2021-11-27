@@ -3,3 +3,7 @@
     height: 446px;
     margin-bottom: 20px;
 }
+
+img.MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img {
+    object-fit: contain;
+}

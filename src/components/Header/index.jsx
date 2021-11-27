@@ -1,12 +1,22 @@
 import { AppBar, Box, Toolbar, Typography, IconButton } from "@material-ui/core"
 import { ShoppingCart } from "@material-ui/icons";
 import * as React from "react";
+import { useDispatch, useSelector, useStore } from "react-redux";
 import { StyledBadge } from "./style";
 import "./style.css";
+import { activeFromCart } from "../../store/modules/ShowCart/actions";
 
 const Header = () => {
 
-  // se você clicar no icone, irá aparecer um componente
+  const somBuy = useSelector((store) => store.cart)
+  const {show} = useSelector((store) => store.showCart)
+
+  const dispatch = useDispatch()
+
+  const enableCart = () => {
+    dispatch(activeFromCart(!show))
+  }
+
 
   return (
     <Box>
@@ -15,8 +25,8 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Commerce
           </Typography>
-          <IconButton aria-label="cart">
-              <StyledBadge badgeContent={4} color="secondary">
+          <IconButton aria-label="cart" onClick={enableCart}>
+              <StyledBadge badgeContent={somBuy.length} color="secondary">
                 <ShoppingCart />
               </StyledBadge>
             </IconButton>

@@ -50,7 +50,7 @@ export default function RecipeReviewCard({ product }) {
           <Share />
         </IconButton>
         <IconButton aria-label="cart" onClick={() => dispatch(addToCard(product))}>
-              <StyledBadge badgeContent={4} color="secondary">
+              <StyledBadge color="secondary">
                 <AddShoppingCartTwoTone />
               </StyledBadge>
             </IconButton>

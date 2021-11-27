@@ -9,3 +9,25 @@
     justify-content: space-evenly;
 }
 
+span {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+span p {
+    margin-left: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background: burlywood;
+    border: ridge;
+}
+
+nav:hover{
+    cursor: pointer;
+}
