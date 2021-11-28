@@ -24,8 +24,6 @@ const ProductList = () => {
     localStorage.setItem("updatecart",JSON.stringify(carrinho));
   }
 
- 
-
   return (
     <div className="main">
       <div className="products">

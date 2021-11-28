@@ -7,4 +7,5 @@ export const Content = styled.div`
     flex-direction: column;
     width: 515px;
     height: 100%;
+    margin-right: 30px;
 `
