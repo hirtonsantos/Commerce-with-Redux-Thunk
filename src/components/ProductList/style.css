@@ -31,3 +31,8 @@ nav {
 nav:hover{
     cursor: pointer;
 }
+
+.cards-car {
+    max-height: 360px;
+    overflow: scroll;
+}

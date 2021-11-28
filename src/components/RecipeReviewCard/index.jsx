@@ -6,7 +6,8 @@ import "./style.css"
 import { StyledBadge } from '../Header/style';
 import { AddShoppingCartTwoTone } from '@material-ui/icons';
 import { useDispatch } from "react-redux";
-import { addToCard } from "../../store/modules/Cart/actions";
+// import { addToCard } from "../../store/modules/Cart/actions";
+import { addToCardThunk } from '../../store/modules/Cart/thunks';
 
 export default function RecipeReviewCard({ product }) {
 
@@ -49,7 +50,7 @@ export default function RecipeReviewCard({ product }) {
         <IconButton aria-label="share">
           <Share />
         </IconButton>
-        <IconButton aria-label="cart" onClick={() => dispatch(addToCard(product))}>
+        <IconButton aria-label="cart" onClick={() => dispatch(addToCardThunk(product))}>
               <StyledBadge color="secondary">
                 <AddShoppingCartTwoTone />
               </StyledBadge>

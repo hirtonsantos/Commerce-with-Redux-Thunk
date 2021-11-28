@@ -2,8 +2,8 @@ const cartReducer = ((state = [], action) => {
     switch (action.type){
     case "@cart/ADD":
         const {product} = action
-        // console.log(state)
-        return [...state, product]
+        const {add} = product
+        return [...state,add]
 
     case "@cart/REMOVE":
         const { id } = action;

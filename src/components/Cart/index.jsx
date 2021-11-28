@@ -6,13 +6,15 @@ import { Container } from "./style";
 const Cart = ({ product }) => {
   const { name, price, id, image} = product;
 
+  // console.log(product)
+
   const dispatch = useDispatch();
 
   return (
     <Container>
       <img src={image} alt={name} />
       <h2>{name}</h2>
-      <span>{price}</span>
+      <span>{price.toFixed(2)}</span>
       <Button onClick={() => dispatch(removeFromCart(id))}>
         Remover do carrinho
       </Button>
