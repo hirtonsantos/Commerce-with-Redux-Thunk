@@ -24,7 +24,7 @@ export default function RecipeReviewCard({ product }) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            J
           </Avatar>
         }
         action={
@@ -39,7 +39,7 @@ export default function RecipeReviewCard({ product }) {
         component="img"
         height="194"
         image={image} // IMAGEM DA COMIDA 
-        alt="Paella dish"
+        alt={name}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">

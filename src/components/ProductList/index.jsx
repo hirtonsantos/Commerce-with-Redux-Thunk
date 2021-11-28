@@ -13,8 +13,6 @@ const ProductList = () => {
   const carrinho = useSelector((store) => store.cart)
   const {show} = useSelector((store) => store.showCart)
 
-
-
   function getItem(){
     localStorage.setItem("updatecart",JSON.stringify(carrinho));
     toast.success("Carrinho fechado com sucesso")

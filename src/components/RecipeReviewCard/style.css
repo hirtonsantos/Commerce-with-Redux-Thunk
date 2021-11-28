@@ -2,7 +2,11 @@
     width: 305px;
     height: 446px;
     margin-bottom: 20px;
-    background-color: #efefef;
+    background-color: #efefef;    
+}
+
+.MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover{
+    cursor: pointer;
 }
 
 img.MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img {
