@@ -5,7 +5,8 @@ export const Content = styled.div`
     display: flex;
     display: ${(props) => (props.show ?  "flex" : "none")};
     flex-direction: column;
-    width: 515px;
+    /* width: 515px; */
+    width: 606px;
     height: 100%;
     margin-right: 30px;
 `

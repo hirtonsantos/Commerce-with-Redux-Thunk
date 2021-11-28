@@ -1,7 +1,7 @@
 import addToCard from "../Cart/actions"
 import { removeFromCart } from "../Cart/actions";
 
-export const addToCardThunk = (add) => { //coment
+export const addToCardThunk = (add, toastAdd) => { //coment
 
 	// No thunk retornamos uma função anonima
   return (dispatch, getState) => {
@@ -12,15 +12,17 @@ export const addToCardThunk = (add) => { //coment
 	// aqui adicionamos o comentário que entrou como parâmetro lá em cima
     const product = { add };
 	// nessa linha damos o dispatch na nossa action, com a alteração feita
+    toastAdd()
     dispatch(addToCard(product));
   };
 };
 
-export const removeToCardThunk = (remove) => {
+export const removeToCardThunk = (remove, toastRemove) => {
   return (dispatch, getState) => {
     const {cart} = getState()
     console.log("cart",cart)
     const id = { remove }
+    toastRemove()
     dispatch(removeFromCart(id))
   }
 }

@@ -26,6 +26,7 @@ nav {
     justify-content: space-evenly;
     background: burlywood;
     border: ridge;
+    align-items: center;
 }
 
 nav:hover{

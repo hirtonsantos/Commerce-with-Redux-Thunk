@@ -17,6 +17,7 @@ export const Container = styled.div`
     }
     h2 {
         font-size: 18px;
+        max-width: 100px;
     }
     Button {
         margin-right: 10px;

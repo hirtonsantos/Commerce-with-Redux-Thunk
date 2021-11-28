@@ -5,6 +5,7 @@ import Cart from "../Cart";
 import { Content } from "./style";
 import Button from "../Button"
 import { useState } from "react";
+import { toast } from "react-hot-toast"
 
 const ProductList = () => {
 
@@ -16,13 +17,8 @@ const ProductList = () => {
 
   function getItem(){
     localStorage.setItem("updatecart",JSON.stringify(carrinho));
+    toast.success("Carrinho fechado com sucesso")
   }
-
-
-
-
-
-  // console.log("carrinho", somBuy, "list", list)
 
   const [newlist] = useState(
     JSON.parse(localStorage.getItem("updatecart")) || ""

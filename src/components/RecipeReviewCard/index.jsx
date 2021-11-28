@@ -8,11 +8,16 @@ import { AddShoppingCartTwoTone } from '@material-ui/icons';
 import { useDispatch } from "react-redux";
 // import { addToCard } from "../../store/modules/Cart/actions";
 import { addToCardThunk } from '../../store/modules/Cart/thunks';
+import {toast} from "react-hot-toast"
 
 export default function RecipeReviewCard({ product }) {
 
-  const { name, image } = product;
+  const { name, image, price, description } = product;
   const dispatch = useDispatch();
+
+  const toastAdd = () => {
+    toast.success("Item adicionado ao carrinho")
+  };
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -28,7 +33,7 @@ export default function RecipeReviewCard({ product }) {
           </IconButton>
         }
         title={name} // NOME DA COMIDA
-        subheader="September 14, 2016"    // ANO DA COMIDA
+        subheader={price.toFixed(2)}    // ANO DA COMIDA
       />
       <CardMedia
         component="img"
@@ -38,9 +43,7 @@ export default function RecipeReviewCard({ product }) {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -51,7 +54,7 @@ export default function RecipeReviewCard({ product }) {
           <Share />
         </IconButton>
         
-        <IconButton aria-label="cart" onClick={() => dispatch(addToCardThunk(product))}>
+        <IconButton aria-label="cart" onClick={() => dispatch(addToCardThunk(product, toastAdd))}>
               <StyledBadge color="secondary">
                 <AddShoppingCartTwoTone />
               </StyledBadge>
