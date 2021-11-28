@@ -7,7 +7,8 @@ const cartReducer = ((state = [], action) => {
 
     case "@cart/REMOVE":
         const { id } = action;
-        const newList = state.filter((product) => product.id !== id);
+        const {remove} = id
+        const newList = state.filter((product) => product.id !== remove);
   
         return newList;
 

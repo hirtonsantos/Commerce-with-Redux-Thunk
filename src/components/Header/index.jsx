@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { StyledBadge } from "./style";
 import "./style.css";
 import { activeFromCart } from "../../store/modules/ShowCart/actions";
+import { useState } from "react";
 
 const Header = () => {
 
@@ -17,6 +18,23 @@ const Header = () => {
     dispatch(activeFromCart(!show))
   }
 
+    const [list] = useState(
+    JSON.parse(localStorage.getItem("updatecart")) || ""
+  );
+
+
+  console.log("carrinho", somBuy, "list", list)
+
+  function tamanho () {
+    if(list.length >= 1){
+      return list.length
+    } else {
+      return somBuy.length
+    }
+  }
+
+  const tamanhoLeng = tamanho()
+
 
   return (
     <Box>
@@ -26,7 +44,7 @@ const Header = () => {
             Commerce
           </Typography>
           <IconButton aria-label="cart" onClick={enableCart}>
-              <StyledBadge badgeContent={somBuy.length} color="secondary">
+              <StyledBadge badgeContent={tamanhoLeng} color="secondary">
                 <ShoppingCart />
               </StyledBadge>
             </IconButton>

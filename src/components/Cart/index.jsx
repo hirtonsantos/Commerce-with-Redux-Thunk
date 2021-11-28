@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../store/modules/Cart/actions";
+// import { removeFromCart } from "../../store/modules/Cart/actions";
+import { removeToCardThunk } from "../../store/modules/Cart/thunks";
 import Button from "../Button";
 import { Container } from "./style";
 
@@ -15,7 +16,7 @@ const Cart = ({ product }) => {
       <img src={image} alt={name} />
       <h2>{name}</h2>
       <span>{price.toFixed(2)}</span>
-      <Button onClick={() => dispatch(removeFromCart(id))}>
+      <Button onclick={() => dispatch(removeToCardThunk(id))}>
         Remover do carrinho
       </Button>
     </Container>

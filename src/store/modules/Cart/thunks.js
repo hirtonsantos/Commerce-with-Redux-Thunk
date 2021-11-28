@@ -1,4 +1,5 @@
 import addToCard from "../Cart/actions"
+import { removeFromCart } from "../Cart/actions";
 
 export const addToCardThunk = (add) => { //coment
 
@@ -7,17 +8,25 @@ export const addToCardThunk = (add) => { //coment
 
 	// aqui estamos pegando o state card 
     const { cart } = getState();
-
+    console.log(cart)
 	// aqui adicionamos o comentário que entrou como parâmetro lá em cima
     const product = { add };
 	// nessa linha damos o dispatch na nossa action, com a alteração feita
-  localStorage.setItem("updatecart",JSON.stringify(cart))
     dispatch(addToCard(product));
   };
 };
 
+export const removeToCardThunk = (remove) => {
+  return (dispatch, getState) => {
+    const {cart} = getState()
+    console.log("cart",cart)
+    const id = { remove }
+    dispatch(removeFromCart(id))
+  }
+}
 
-          // ENVIA PARA A LOCAL STORAGE
+
+// ENVIA PARA A LOCAL STORAGE
 // localStorage.setItem("updatecart",JSON.stringify(cart));
           // PEGA O VALOR
 // const [token] = useState(

@@ -8,21 +8,40 @@ import { useState } from "react";
 
 const ProductList = () => {
 
-  const [list] = useState(
-    JSON.parse(localStorage.getItem("updatecart")) || ""
-  );
-
   const produtos = useSelector((store) => store.products)
   const carrinho = useSelector((store) => store.cart)
   const {show} = useSelector((store) => store.showCart)
 
-  const somPrice = list.reduce((acc, curr) => {
-    return acc + curr.price
-  }, 0)
+
 
   function getItem(){
     localStorage.setItem("updatecart",JSON.stringify(carrinho));
   }
+
+
+
+
+
+  // console.log("carrinho", somBuy, "list", list)
+
+  const [newlist] = useState(
+    JSON.parse(localStorage.getItem("updatecart")) || ""
+  );
+
+  function current () {
+
+    if(newlist.length >= 1){
+      return newlist
+    } else {
+      return carrinho
+    }
+  }
+
+  const tamanhocurrent = current()
+
+  const somPrice = tamanhocurrent.reduce((acc, curr) => {
+    return acc + curr.price
+  }, 0)
 
   return (
     <div className="main">
@@ -33,7 +52,7 @@ const ProductList = () => {
         </div>
       <Content show={show}>
         <div className="carts-car">
-      {list.map((item) => {
+      {tamanhocurrent.map((item) => {
         return <Cart product={item} key={item.id}/>
       })}
       </div>

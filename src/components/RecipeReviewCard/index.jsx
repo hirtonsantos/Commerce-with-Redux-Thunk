@@ -50,6 +50,7 @@ export default function RecipeReviewCard({ product }) {
         <IconButton aria-label="share">
           <Share />
         </IconButton>
+        
         <IconButton aria-label="cart" onClick={() => dispatch(addToCardThunk(product))}>
               <StyledBadge color="secondary">
                 <AddShoppingCartTwoTone />
