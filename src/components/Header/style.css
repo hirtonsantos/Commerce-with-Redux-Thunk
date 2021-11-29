@@ -2,7 +2,7 @@
     width: 100vw;
     background-color: aliceblue;
     height: 64px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 }
 
 .MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters {
