@@ -52,7 +52,7 @@ const ProductList = () => {
       </div>
       <nav>
       <span>Preço total: <p>{somPrice.toFixed(2)}</p></span>
-      <Button onclick={getItem}> Fechar carrinho </Button>
+      <Button onclick={getItem} coloRed={true}> Fechar carrinho </Button>
       </nav>
       </Content>
       </div>

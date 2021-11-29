@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-    background: #0c0d0d;
+    /* background: #0c0d0d; */
+    background: ${(props) => (props.coloRed ? "green" : "#0c0d0d")};
+    /* display: ${(props) => (props.show ?  "flex" : "none")}; */
     color: #f5f5f5;
     height: 45px;
     border-radius: 8px;
