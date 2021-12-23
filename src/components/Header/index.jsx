@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { StyledBadge } from "./style";
 import "./style.css";
 import { activeFromCart } from "../../store/modules/ShowCart/actions";
-import { useState } from "react";
 
 const Header = () => {
 
@@ -18,16 +17,13 @@ const Header = () => {
     dispatch(activeFromCart(!show))
   }
 
-    const [list] = useState(
-    JSON.parse(localStorage.getItem("updatecart")) || ""
-  );
+  const cartList = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-  console.log("carrinho", somBuy, "list", list)
+  console.log("carrinho", somBuy, "list", cartList)
 
   function tamanho () {
-    if(list.length >= 1){
-      return list.length
+    if(cartList.length >= 1){
+      return cartList.length
     } else {
       return somBuy.length
     }

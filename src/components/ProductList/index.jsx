@@ -4,36 +4,15 @@ import RecipeReviewCard from "../RecipeReviewCard"
 import Cart from "../Cart";
 import { Content } from "./style";
 import Button from "../Button"
-import { useState } from "react";
-import { toast } from "react-hot-toast"
 
 const ProductList = () => {
 
   const produtos = useSelector((store) => store.products)
-  const carrinho = useSelector((store) => store.cart)
   const {show} = useSelector((store) => store.showCart)
 
-  function getItem(){
-    localStorage.setItem("updatecart",JSON.stringify(carrinho));
-    toast.success("Carrinho fechado com sucesso")
-  }
+  const cartList = JSON.parse(localStorage.getItem("cart")) || []
 
-  const [newlist] = useState(
-    JSON.parse(localStorage.getItem("updatecart")) || ""
-  );
-
-  function current () {
-
-    if(newlist.length >= 1){
-      return newlist
-    } else {
-      return carrinho
-    }
-  }
-
-  const tamanhocurrent = current()
-
-  const somPrice = tamanhocurrent.reduce((acc, curr) => {
+  const somPrice = cartList.reduce((acc, curr) => {
     return acc + curr.price
   }, 0)
 
@@ -46,13 +25,13 @@ const ProductList = () => {
         </div>
       <Content show={show}>
         <div className="carts-car">
-      {tamanhocurrent.map((item) => {
+      {cartList.map((item) => {
         return <Cart product={item} key={item.id}/>
       })}
       </div>
       <nav>
       <span>Preço total: <p>{somPrice.toFixed(2)}</p></span>
-      <Button onclick={getItem} coloRed={true}> Fechar carrinho </Button>
+      <Button coloRed={true}> Fechar carrinho </Button>
       </nav>
       </Content>
       </div>
