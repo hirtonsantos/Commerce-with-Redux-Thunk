@@ -5,14 +5,12 @@ const cartReducer = ((state = defaultState, action) => {
     switch (action.type){
     case "@cart/ADD":
         const {product} = action
-        const {add} = product
-        localStorage.setItem("cart", JSON.stringify([...state, add]));
-        return [...state, add]
+        localStorage.setItem("cart", JSON.stringify([...state, product]));
+        return [...state, product]
 
     case "@cart/REMOVE":
         const { id } = action;
-        const {remove} = id
-        const index = state.map((item) => item.id).indexOf(Number(remove))
+        const index = state.map((item) => item.id).indexOf(Number(id))
         state.splice(index, 1)
         localStorage.setItem("cart", JSON.stringify([...state]));
         return state

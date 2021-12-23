@@ -10,6 +10,7 @@ const reducers = combineReducers({
   showCart: showCartReducer,
 });
 
+
 const store = createStore(reducers, applyMiddleware(thunk));
 
 export default store;

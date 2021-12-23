@@ -5,7 +5,7 @@ import Button from "../Button";
 import { Container } from "./style";
 import { toast } from "react-hot-toast"
 
-const Cart = ({ product }) => {
+const Cart = ({ product, setIsLog, isLog }) => {
   const { name, price, id, image} = product;
 
   // console.log(product)
@@ -16,12 +16,17 @@ const Cart = ({ product }) => {
     toast.success("Remoção concluída")
   };
 
+  function teste () {
+    dispatch(removeToCardThunk(id, toastRemove))
+    setIsLog(!isLog)
+  }
+
   return (
     <Container>
       <img src={image} alt={name} />
       <h2>{name}</h2>
       <span>{price.toFixed(2)}</span>
-      <Button onclick={() => dispatch(removeToCardThunk(id, toastRemove))}>
+      <Button onclick={teste}>
         Remover do carrinho
       </Button>
     </Container>

@@ -19,8 +19,6 @@ const Header = () => {
 
   const cartList = JSON.parse(localStorage.getItem("cart")) || [];
 
-  console.log("carrinho", somBuy, "list", cartList)
-
   function tamanho () {
     if(cartList.length >= 1){
       return cartList.length
