@@ -12,8 +12,7 @@ export const addToCardThunk = (add, toastAdd) => { //coment
   };
 };
 
-export const removeToCardThunk = (remove, toastRemove) => {
-
+export const removeToCardThunk = (remove, toastRemove) => { 
   return (dispatch, getState) => {
     const {cart} = getState()
     console.log(cart)
